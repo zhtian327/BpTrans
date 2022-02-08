@@ -21,8 +21,8 @@ class ViT(nn.Module):
 
         self.mlp_head = nn.Sequential(
             nn.LayerNorm(dim),  # 正则化
-            nn.Linear(dim, dim),  # 线性输出
-            nn.Linear(dim, dim),  # 线性输出
+            #nn.Linear(dim, dim),  # 线性输出
+            #nn.Linear(dim, dim),  # 线性输出
             nn.Linear(dim, sequence_len),  # 线性输出
             Rearrange('b q p -> b (q p)', p = sequence_len) #reshape
         )
